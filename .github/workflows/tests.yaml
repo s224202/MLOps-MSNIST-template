@@ -5,6 +5,13 @@ on:
     branches: [ master, main ]
   pull_request:
     branches: [ master, main ]
+    
+steps:
+- uses: actions/checkout@v5
+- uses: actions/setup-python@v5
+  with:
+    python-version: 3.12
+    cache: 'pip' # caching pip dependencies
 
 jobs:
   build:
