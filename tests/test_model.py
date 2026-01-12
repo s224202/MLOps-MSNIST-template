@@ -3,8 +3,9 @@ import torch
 from mlops_mnist_from_template.model import Model
 from mlops_mnist_from_template.data import corruptedMNIST
 from mlops_mnist_from_template.train import train
+import os.path
 
-
+@pytest.mark.skipif(not os.path.exists("data/processed/corruptmnist_v1/train_images.pt"), reason="Processed data not found. Run preprocessing first.")
 def test_io_shapes():
     dataset = corruptedMNIST("data/processed")
     sample_image, sample_label = dataset[0]

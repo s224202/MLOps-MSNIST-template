@@ -4,6 +4,7 @@ from mlops_mnist_from_template.data import corruptedMNIST
 import os.path
 import pytest
 
+@pytest.mark.skipif(not os.path.exists("data/processed/corruptmnist_v1/train_images.pt"), reason="Processed data not found. Run preprocessing first.")
 def test_my_dataset():
     """Test the MyDataset class."""
     dataset = corruptedMNIST("data/raw")
