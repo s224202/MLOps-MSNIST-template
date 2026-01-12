@@ -1,14 +1,15 @@
 import torch
 from torch.utils.data import Dataset
-
 from mlops_mnist_from_template.data import corruptedMNIST
-
+import os.path
+import pytest
 
 def test_my_dataset():
     """Test the MyDataset class."""
     dataset = corruptedMNIST("data/raw")
     assert isinstance(dataset, Dataset)
 
+@pytest.mark.skipif(not os.path.exists("data/processed/corruptmnist_v1/train_images.pt"), reason="Processed data not found. Run preprocessing first.")
 def test_data_len():
     dataset = corruptedMNIST("data/processed")
     assert len(dataset) > 0
