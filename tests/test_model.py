@@ -1,5 +1,5 @@
 import pytest
-import torch   
+import torch
 from mlops_mnist_from_template.model import Model
 from mlops_mnist_from_template.data import corruptedMNIST
 from mlops_mnist_from_template.train import train

@@ -140,7 +140,7 @@ class corruptedMNIST(Dataset):
         torch.save(test_targets, processed_dir / "test_targets.pt")
 
         print(f"Saved processed data to: {processed_dir}")
-        
+
 
 def preprocess(data_path: Path, output_folder: Path) -> None:
     print("Preprocessing data...")

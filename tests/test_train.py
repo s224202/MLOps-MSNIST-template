@@ -36,4 +36,3 @@ def test_train_minimal(tmp_path):
 
 	assert isinstance(model, FakeModel)
 	assert fake_save.called
-
